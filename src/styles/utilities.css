@@ -1,0 +1,374 @@
+/* ==========================================================================
+   UTILITIES
+   ==========================================================================
+   Layout
+   Containers
+   Glass
+   Surface
+   Cards
+   Grid
+   Flex
+   Scrollbars
+   Helpers
+   ========================================================================== */
+
+@layer utilities {
+
+    /* ==========================================================================
+     CONTAINERS
+     ========================================================================== */
+
+    .container-xs {
+        width: 100%;
+        max-width: var(--container-xs);
+        margin-inline: auto;
+        padding-inline: 1rem;
+    }
+
+    .container-sm {
+        width: 100%;
+        max-width: var(--container-sm);
+        margin-inline: auto;
+        padding-inline: 1rem;
+    }
+
+    .container-md {
+        width: 100%;
+        max-width: var(--container-md);
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+    }
+
+    .container-lg {
+        width: 100%;
+        max-width: var(--container-lg);
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+    }
+
+    .container-xl {
+        width: 100%;
+        max-width: var(--container-xl);
+        margin-inline: auto;
+        padding-inline: 2rem;
+    }
+
+    .container-2xl {
+        width: 100%;
+        max-width: var(--container-2xl);
+        margin-inline: auto;
+        padding-inline: 2rem;
+    }
+
+    /* ==========================================================================
+     PAGE
+     ========================================================================== */
+
+    .page {
+        min-height: 100dvh;
+        padding-block: var(--space-10);
+    }
+
+    .page-header {
+        margin-bottom: var(--space-8);
+    }
+
+    .page-title {
+        margin-bottom: .5rem;
+    }
+
+    .page-description {
+        color: var(--muted-foreground);
+        max-width: 60ch;
+    }
+
+    .section {
+        padding-block: var(--space-16);
+    }
+
+    /* ==========================================================================
+     SURFACES
+     ========================================================================== */
+
+    .surface {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .surface-muted {
+        background: var(--muted);
+        border-radius: var(--radius-lg);
+    }
+
+    .glass {
+        background: rgb(255 255 255 / .06);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgb(255 255 255 / .12);
+
+        border-radius: var(--radius-xl);
+    }
+
+    .dark .glass {
+        background: rgb(255 255 255 / .04);
+    }
+
+    /* ==========================================================================
+     CARDS
+     ========================================================================== */
+
+    .card-hover {
+        transition:
+            transform var(--duration-fast) var(--ease-default),
+            box-shadow var(--duration-fast) var(--ease-default);
+    }
+
+    .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .interactive {
+        cursor: pointer;
+        transition: all var(--duration-fast) var(--ease-default);
+    }
+
+    .interactive:hover {
+        background: var(--accent);
+    }
+
+    /* ==========================================================================
+     GRADIENTS
+     ========================================================================== */
+
+    .bg-gradient-primary {
+        background:
+            linear-gradient(135deg,
+                var(--primary),
+                var(--chart-1));
+    }
+
+    .bg-gradient-muted {
+        background:
+            linear-gradient(180deg,
+                var(--background),
+                var(--muted));
+    }
+
+    .text-gradient {
+        background:
+            linear-gradient(90deg,
+                var(--primary),
+                var(--chart-1));
+
+        color: transparent;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    /* ==========================================================================
+     GRID
+     ========================================================================== */
+
+    .grid-auto-fit {
+        display: grid;
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(280px, 1fr));
+
+        gap: var(--space-6);
+    }
+
+    .grid-auto-fill {
+        display: grid;
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(280px, 1fr));
+
+        gap: var(--space-6);
+    }
+
+    .grid-dashboard {
+        display: grid;
+        gap: var(--space-6);
+
+        grid-template-columns:
+            repeat(12,
+                minmax(0, 1fr));
+    }
+
+    /* ==========================================================================
+     FLEX HELPERS
+     ========================================================================== */
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex-col-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ==========================================================================
+     DIVIDERS
+     ========================================================================== */
+
+    .divider-x>*+* {
+        border-left: 1px solid var(--border);
+    }
+
+    .divider-y>*+* {
+        border-top: 1px solid var(--border);
+    }
+
+    /* ==========================================================================
+     SCROLL
+     ========================================================================== */
+
+    .scrollbar-hidden {
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hidden::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-thin {
+        scrollbar-width: thin;
+    }
+
+    /* ==========================================================================
+     TEXT
+     ========================================================================== */
+
+    .truncate-2 {
+        display: -webkit-box;
+
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    .truncate-3 {
+        display: -webkit-box;
+
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    .truncate-4 {
+        display: -webkit-box;
+
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    /* ==========================================================================
+     ASPECT RATIOS
+     ========================================================================== */
+
+    .aspect-square {
+        aspect-ratio: 1;
+    }
+
+    .aspect-video {
+        aspect-ratio: 16 / 9;
+    }
+
+    .aspect-portrait {
+        aspect-ratio: 3 / 4;
+    }
+
+    /* ==========================================================================
+     BADGES
+     ========================================================================== */
+
+    .badge-success {
+        background: color-mix(in srgb, var(--success) 15%, transparent);
+        color: var(--success);
+    }
+
+    .badge-warning {
+        background: color-mix(in srgb, var(--warning) 18%, transparent);
+        color: var(--warning);
+    }
+
+    .badge-danger {
+        background: color-mix(in srgb, var(--danger) 15%, transparent);
+        color: var(--danger);
+    }
+
+    .badge-info {
+        background: color-mix(in srgb, var(--info) 15%, transparent);
+        color: var(--info);
+    }
+
+    .badge-success,
+    .badge-warning,
+    .badge-danger,
+    .badge-info {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+
+        padding: .25rem .65rem;
+
+        border-radius: var(--radius-full);
+
+        font-size: .75rem;
+        font-weight: 600;
+    }
+
+    /* ==========================================================================
+     RING
+     ========================================================================== */
+
+    .ring-primary {
+        box-shadow:
+            0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
+    }
+
+    /* ==========================================================================
+     SHADOW HELPERS
+     ========================================================================== */
+
+    .shadow-soft {
+        box-shadow: var(--shadow-md);
+    }
+
+    .shadow-large {
+        box-shadow: var(--shadow-xl);
+    }
+
+    /* ==========================================================================
+     CURSORS
+     ========================================================================== */
+
+    .cursor-grab {
+        cursor: grab;
+    }
+
+    .cursor-grab:active {
+        cursor: grabbing;
+    }
+}

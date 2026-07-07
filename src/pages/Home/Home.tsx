@@ -1,3 +1,10 @@
+import CustomButton from "@/components/custom/CustomButton";
+
 export default function Home() {
-  return <h1>Home Page</h1>;
+  return (
+    <>
+      <div>Home Page</div>
+      <CustomButton label="Click Me" />
+    </>
+  );
 }
