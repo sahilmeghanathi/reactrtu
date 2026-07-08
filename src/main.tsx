@@ -4,14 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import "../src/styles/globals.css";
-import { AuthProvider } from "@/providers";
+import { QueryProvider, ThemeProvider } from "@/providers";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <ThemeProvider>
+        <QueryProvider>
+          <App />
+        </QueryProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
